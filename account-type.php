@@ -21,8 +21,7 @@ if ($_POST) {
 		$type = "expert";
 		$q = "UPDATE users SET account_type='$type' WHERE email='$user[email]'";
 		if (mysqli_query($dbc, $q)) {
-			$_SESSION['account_created'] = true;
-			header('Location: expert.php');
+			header('Location: about.php');
 		}  else {
 			$q = "DELETE from users WHERE email='$user[email]'";
 			$r = mysqli_query($dbc, $q);

@@ -44,7 +44,9 @@
 	    $("#form-account-phone").hide();
 	    $("#form-account-type").hide();	
 		$("#form-youth-specific").hide();
+		$("#panel-youth-specific-questions").hide();
 		$(".form-expert-action-item").hide();
+		$("#panel-youth-specific-questions").hide();
 
 		$("#btn-account-name-edit").click(function() {
 			$("#form-account-name").show(600);
@@ -141,11 +143,15 @@
 	   
 	    $("#btn-youth-general").click(function() {
 			$("#form-youth-specific").hide();
+			$("#panel-youth-specific-questions").hide();
 			$("#form-youth-general").show();
+			$("#panel-youth-general-questions").show();
 	    });
 	    $("#btn-youth-specific").click(function() {
 			$("#form-youth-specific").show();
+			$("#panel-youth-specific-questions").show();
 			$("#form-youth-general").hide();
+			$("#panel-youth-general-questions").hide();
 	    });
 	    
 	});

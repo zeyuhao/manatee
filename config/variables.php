@@ -2,7 +2,7 @@
 # Global Variables Setup
 
 // Title:
-$site_title = 'Mentorra';
+$site_title = 'Manatee';
 
 # fetch pagename values
 $pagename = basename($_SERVER['PHP_SELF']);

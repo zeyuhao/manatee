@@ -5,8 +5,16 @@
 	        	<img src="images/spectro_logo.png">
 	      	</a>
 			<!-- Navbar highlighting is done here -->
-			<li <?php if($pagename == 'gateway') { echo ' class="active"'; } ?> ><a href="gateway.php">Dashboard</a></li>
-            <li <?php if($pagename == 'forum') { echo ' class="active"'; } ?> ><a href="forum.php">Action Items</a></li>
+			<li <?php if($pagename == 'expert' || $pagename == 'youth') { echo ' class="active"'; } ?>>
+                <a href=
+                    <?php if($pagename == 'expert') {
+                        echo "expert.php";   
+                    } elseif($pagename == 'youth') {
+                        echo "youth.php";   
+                    }?>>Dashboard
+                </a>
+            </li>
+            <li <?php if($pagename == 'forum') { echo ' class="active"'; } ?> ><a href="forum.php">Forum</a></li>
             <li <?php if($pagename == 'account-settings') { echo ' class="active"'; } ?> ><a href="account-settings.php">Account</a></li>
 			<li><a href="logout.php">Sign Out</a></li>
 		</ul><!-- END navbar-nav pull-right -->
