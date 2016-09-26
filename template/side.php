@@ -11,25 +11,23 @@
 	    		echo "Youth";
 	    	} elseif ($user['account_type'] == "expert") {
 	    		echo "Career Expert";
-			}?>
+			} elseif ($user['account_type'] == "guest") {
+                echo "Guest Account"; 
+            }?>
 	    </p>
     </div>
-  	<br>
-  	<br>
   	<a class="navbar-brand">
-  	<?php
-	if ($user['account_type'] == "youth") {
-		echo "Teams I'm on";
-	} elseif ($user['account_type'] == "expert") {
-		echo "My Managed Teams";
-	}?>
+  	Questions by Category
 	</a>
   	<ul class="nav navbar-nav side-bar">
   		<li><hr></li>
-	   	<li class="main-li"><a class="main-li-text" href="#">Money Train</a></li>
-	   	<li><a href="#">App Team</a></li>
-	   	<li><a href="#">Zissou</a></li>
-	   	<li><a href="#">Engineering DevOps</a></li>
-	   	<li><a href="#">Enterprise</a></li>
+	   	<li class="main-li"><a class="main-li-text" href="#">Farming and Gardening</a></li>
+	   	<li><a href="#">Athletics</a></li>
+	   	<li><a href="#">Education</a></li>
+	   	<li><a href="#">Hospitality</a></li>
+	   	<li><a href="#">Law and Politics</a></li>
+	   	<li><a href="#">Medicine</a></li>
+	   	<li><a href="#">STEM</a></li>
+	   	<li><a href="#">Other</a></li>
 	</ul>
 </div>

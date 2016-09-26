@@ -14,7 +14,7 @@ if ($_POST) {
         $q2 = "UPDATE users SET expertise='$expertise' WHERE email='$user[email]'";
 		if (mysqli_query($dbc, $q1) && mysqli_query($dbc, $q2)) {
             $_SESSION['account_created'] = true;
-            header('Location: index.php');
+            header('Location: expert.php');
 		}  else {
 		    $q = "DELETE from users WHERE email='$user[email]'";
             $r = mysqli_query($dbc, $q);

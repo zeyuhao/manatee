@@ -23,5 +23,7 @@ $page = load_page($dbc, $pagename);
 // Fetch user data if logged in
 if (isset($_SESSION['username'])) {
 	$user = data_user($dbc, $_SESSION['username']);
+} else {
+    $user = guest_user(); 
 }
 ?>

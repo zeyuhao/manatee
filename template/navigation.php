@@ -1,9 +1,9 @@
 <nav class="col-md-offset-2 navbar navbar-default navbar-fixed-top" role="navigation"><!-- START MAIN NAVIGATION -->
 	<div class="container-fluid">
 		<ul class="nav navbar-nav pull-right">
-			<a class="navbar-brand" id="spectro-logo" href="index.php">
-	        	<img src="images/spectro_logo.png">
-	      	</a>
+			<a class="navbar-brand" id="manatee-logo" href="index.php">
+                <img src="images/manatee_logo.png">
+            </a>
 			<!-- Navbar highlighting is done here -->
 			<li <?php if($pagename == 'expert' || $pagename == 'youth') { echo ' class="active"'; } ?>>
 			    <a href=

@@ -44,9 +44,11 @@
 	    $("#form-account-phone").hide();
 	    $("#form-account-type").hide();	
 		$("#form-youth-specific").hide();
+		$(".form-expert-answer").hide();
 		$("#panel-youth-specific-questions").hide();
-		$(".form-expert-action-item").hide();
-		$("#panel-youth-specific-questions").hide();
+		$("#panel-expert-answered").hide();
+		$("#panel-forum-specific").hide();
+		
 
 		$("#btn-account-name-edit").click(function() {
 			$("#form-account-name").show(600);
@@ -132,27 +134,48 @@
 			$("#form-account-type").hide(600);
 			$("#account-settings-account-type-data").show(600);
 	    });
-	    
-	    $(".btn-expert-action-item-add").click(function() {
-	    	$(".form-expert-action-item").show(600);
-	    });
-	    $(".btn-expert-action-item-cancel").click(function() {
-			$(".form-expert-action-item").hide(600);
-	    });
-	    
 	   
 	    $("#btn-youth-general").click(function() {
-			$("#form-youth-specific").hide();
-			$("#panel-youth-specific-questions").hide();
-			$("#form-youth-general").show();
-			$("#panel-youth-general-questions").show();
+			$("#form-youth-specific").hide(200);
+			$("#panel-youth-specific-questions").hide(200);
+			$("#form-youth-general").show(200);
+			$("#panel-youth-general-questions").show(200);
 	    });
 	    $("#btn-youth-specific").click(function() {
-			$("#form-youth-specific").show();
-			$("#panel-youth-specific-questions").show();
-			$("#form-youth-general").hide();
-			$("#panel-youth-general-questions").hide();
+			$("#form-youth-specific").show(200);
+			$("#panel-youth-specific-questions").show(200);
+			$("#form-youth-general").hide(200);
+			$("#panel-youth-general-questions").hide(200);
 	    });
+	    
+	    $("#btn-expert-for-you").click(function() {
+	       $("#panel-expert-for-you").show(200);
+	       $("#panel-expert-answered").hide(200);
+	    });
+	    $("#btn-expert-answered").click(function() {
+	       $("#panel-expert-for-you").hide(200);
+           $("#panel-expert-answered").show(200);
+	    });
+	    
+	    $(".btn-answer-question").click(function() {
+           $(".form-expert-answer").show(200);
+           $(".btn-answer-question").hide();
+        });
+        $(".btn-clear-question").click(function() {
+           $(".form-expert-answer").hide();
+           $(".btn-answer-question").show(200);
+        });
+        
+        $("#btn-forum-general").click(function() {
+            $("#panel-forum-specific").hide(200);
+            $("#panel-forum-general").show(200);
+        });
+        $("#btn-forum-specific").click(function() {
+            $("#panel-forum-specific").show(200);
+            $("#panel-forum-general").hide(200);
+        });
+	    
+	    
 	    
 	});
 </script>
