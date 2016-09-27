@@ -44,11 +44,10 @@
 	    $("#form-account-phone").hide();
 	    $("#form-account-type").hide();	
 		$("#form-youth-specific").hide();
-		$(".form-expert-answer").hide();
 		$("#panel-youth-specific-questions").hide();
 		$("#panel-expert-answered").hide();
 		$("#panel-forum-specific").hide();
-		
+		$(".form-expert-answer").hide();
 
 		$("#btn-account-name-edit").click(function() {
 			$("#form-account-name").show(600);
@@ -157,15 +156,6 @@
            $("#panel-expert-answered").show(200);
 	    });
 	    
-	    $(".btn-answer-question").click(function() {
-           $(".form-expert-answer").show(200);
-           $(".btn-answer-question").hide();
-        });
-        $(".btn-clear-question").click(function() {
-           $(".form-expert-answer").hide();
-           $(".btn-answer-question").show(200);
-        });
-        
         $("#btn-forum-general").click(function() {
             $("#panel-forum-specific").hide(200);
             $("#panel-forum-general").show(200);
@@ -174,8 +164,21 @@
             $("#panel-forum-specific").show(200);
             $("#panel-forum-general").hide(200);
         });
-	    
-	    
-	    
 	});
+
+	function show_expert_answer_form(clicked_id) {
+        var btn_id = "#btn-answer-question-" + clicked_id;
+        var form_id = "#form-expert-answer-" + clicked_id;
+        $("[id^=form-expert-answer]").hide(200);
+        $("[id^=btn-answer-question]").show(200);
+        $(form_id).show(200);
+        $(btn_id).hide(200);
+    }
+
+    function hide_expert_answer_form(clicked_id) {
+        var btn_id = "#btn-answer-question-" + clicked_id;
+        var form_id = "#form-expert-answer-" + clicked_id;
+        $(form_id).hide(200);
+        $(btn_id).show(200);
+    }
 </script>

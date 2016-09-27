@@ -6,12 +6,12 @@ if(!isset($_SESSION['username'])) {
 	header('Location: login.php');
 }
 include 'config/setup.php';
-if (isset($_POST['question_id'])) {
+if ($_POST) {
     # TODO FIX expert_answer post from html form below
-    #$answer = $_POST['expert_answer'];
+    $answer = $_POST['expert_answer'];
     $email = $user['email'];
     $question_id = $_POST['question_id'];
-    $q = "UPDATE specific_questions SET answer='Root plants and leafy vegetables are best: mint, lettuce, carrots, etc', answerer_email='$email' WHERE id='$question_id'";
+    $q = "UPDATE specific_questions SET answer='$answer', answerer_email='$email' WHERE id='$question_id'";
     $r = mysqli_query($dbc, $q);
 }
 include 'config/variables.php'; // reload site variables for user after sql query executes
@@ -67,12 +67,12 @@ include 'config/variables.php'; // reload site variables for user after sql quer
                                                     </div>
                                                 </div><!-- END row -->
                                                 <div class="row">
-                                                        <div class="col-md-1">
-                                                            <button class="btn btn-primary btn-answer-question">Write an Answer <?php if (isset($test_msg)) { echo $test_msg; } ?></button>
-                                                        </div>
+                                                    <div class="col-md-1" id="btn-answer-question-<?php echo $question_id;?>" onClick="show_expert_answer_form(<?php echo $question_id; ?>)">
+                                                        <button class="btn btn-primary">Answer <?php if (isset($test_msg)) { echo $test_msg; } ?></button>
+                                                    </div>
                                                 </div><!-- END row -->
                                                 <div class="row">
-                                                    <form action="expert.php" class="form-expert-answer" method="post" role="form" enctype="multipart/form-data">
+                                                    <form action="expert.php" class="form-expert-answer" id="form-expert-answer-<?php echo $question_id; ?>" method="post" role="form" enctype="multipart/form-data">
                                                         <div class="row">
                                                             <div class="container">
                                                                 <div class="row">
@@ -83,19 +83,20 @@ include 'config/variables.php'; // reload site variables for user after sql quer
                                                                 <div class="row">
                                                                     <div class="container">
                                                                         <div class="col-md-6">
-                                                                            <textarea class="form-control" id="expert-answer" name="expert-answer" 
-                                                                                required="yes" placeholder="Please provide an answer" rows="3"></textarea>
+                                                                            <textarea class="form-control" id="expert_answer" name="expert_answer"
+                                                                                required="yes" placeholder="Please provide an answer" rows="3">
+                                                                            </textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div><!-- END row -->
                                                         <div class="row">
-                                                            <div class="container">
+                                                            <div class="container" id="expert-answer-form-btns">
                                                                 <div class="col-md-2">
                                                                     <button type="submit" class="btn btn-primary" name="btn-answer-submit">Submit</button>
                                                                     <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
-                                                                    <button type="reset" class="btn btn-primary btn-clear-question">Clear</button>
+                                                                    <button type="reset" class="btn btn-primary" id="btn-clear-question-<?php echo $question_id; ?>" onClick="hide_expert_answer_form(<?php echo $question_id; ?>)">Clear</button>
                                                                 </div>
                                                             </div>
                                                         </div>

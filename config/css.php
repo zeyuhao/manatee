@@ -182,13 +182,9 @@ body {
 	margin: 7px 10px 5px 10px;
 }
 
-#spectro-logo {
-	position: relative;
-	top: -8px;
-	right: 10px;
+#expert-answer-form-btns {
+    margin-top: 20px;
 }
-
-
 
 /* changes background color of navbar */
 /*.navbar-default {
